@@ -1,0 +1,35 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+<div id="vue_data_grid">
+	<div class="row">
+		<div class="col-sm-8">
+			<table>
+				<thead>
+					<tr>
+						<th v-if="HasHeaders" v-for="(item,index) in GridHeaders">
+							{{item}}
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(item, index) in GridData" :key="index">
+						<td v-for="(column, indexColumn) in GridHeaders" :key="indexColumn">{{GetColumData(item,column)}}</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+</div>
+@Scripts.Render("~/Scripts/Vue.js")
+@Scripts.Render("~/Scripts/lodash.js")
+@Scripts.Render("~/Scripts/TestMe.js")
+
+<script type="text/x-template" id="valuation-date-template">
+@*<span class="tag label label-info" :disabled="!ValuationDateisEditableItem || projectclose" :title="toolTipValue">
+{{displayDate}}
+<span data-role="remove" v-on:click="delete_valuation_date" :disabled=" projectclose || !ValuationDateisEditableItem"></span>
+</span>*@
+</script>
